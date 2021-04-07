@@ -40,29 +40,31 @@ class TopAlbumViewController: UIViewController {
     }
     
     private func getTopMusicAlbum(withURL url: URL){
-        networkClient.getTopAlbum(withURL: url) { (musicAlbums) in
-            self.albums = musicAlbums
-            
-            let group = DispatchGroup()
-            group.enter()
-            DispatchQueue.global().async {
-                self.sortAlbum(by: self.sortingCriteria)
-                group.leave()
-            }
-            
-            group.notify(queue: .global()) {
-                DispatchQueue.main.async {
-                    self.topAlbumTableView.reloadData()
-                    self.activityIndicator.stopAnimating()
-                }
-            }
-            
-        } onError: { (err) in
-            DispatchQueue.main.async {
-                self.activityIndicator.stopAnimating()
-                let alert = UIAlertController(title: "Error", message: "\(err.localizedDescription)", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+        
+        networkClient.getTopAlbum(withURL: url) { (result) in
+            switch result {
+                case .success(let musicAlbums):
+                    self.albums = musicAlbums
+                    let group = DispatchGroup()
+                    group.enter()
+                    DispatchQueue.global().async {
+                        self.sortAlbum(by: self.sortingCriteria)
+                        group.leave()
+                    }
+                    
+                    group.notify(queue: .global()) {
+                        DispatchQueue.main.async {
+                            self.topAlbumTableView.reloadData()
+                            self.activityIndicator.stopAnimating()
+                        }
+                    }
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self.activityIndicator.stopAnimating()
+                        let alert = UIAlertController(title: "Error", message: "\(error.rawValue)", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
             }
         }
     }
