@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CcM-J3-vio">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Top Music Albums-->
+        <scene sceneID="K5q-e2-qJl">
+            <objects>
+                <viewController id="Ndd-n6-Rej" customClass="TopAlbumViewController" customModule="MusicApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="You-d2-FOk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MzZ-KT-4dT">
+                                <rect key="frame" x="0.0" y="138" width="414" height="724"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="albumCell" rowHeight="150" id="3Z6-sp-cwQ" customClass="MusicAlbumTableViewCell" customModule="MusicApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Z6-sp-cwQ" id="Ck9-6u-Rwe" customClass="MusicAlbumTableViewCell" customModule="MusicApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MissingArt" translatesAutoresizingMaskIntoConstraints="NO" id="kg8-H2-D5I">
+                                                    <rect key="frame" x="20" y="11" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Album Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lF-A2-aqy">
+                                                    <rect key="frame" x="158" y="11" width="236" height="23.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="by: Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53l-ed-Tms">
+                                                    <rect key="frame" x="158" y="42.5" width="236" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemGray3Color"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fetch:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iR7-Hb-OQH">
+                                <rect key="frame" x="20" y="98" width="60" height="19.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iR7-Hb-OQH" secondAttribute="height" multiplier="37:12" id="0ol-7b-HkH"/>
+                                    <constraint firstAttribute="width" constant="60" id="nn2-qN-jel"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNl-hF-uTl">
+                                <rect key="frame" x="80" y="89.5" width="96" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="25 Albums"/>
+                                <connections>
+                                    <action selector="fetchAmountButtonClicked:" destination="Ndd-n6-Rej" eventType="touchUpInside" id="Hv9-yo-01g"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3s-gO-Pj3">
+                                <rect key="frame" x="326" y="89.5" width="68" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Ratings"/>
+                                <connections>
+                                    <action selector="sortButtonClicked:" destination="Ndd-n6-Rej" eventType="touchUpInside" id="PKn-Rk-SlA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort by:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOm-ww-A56">
+                                <rect key="frame" x="246" y="95" width="75" height="25.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="IOm-ww-A56" secondAttribute="height" multiplier="71:24" id="DuM-qR-5gI"/>
+                                    <constraint firstAttribute="width" constant="75" id="GbT-4d-1kn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Tr7-mF-7fL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cNl-hF-uTl" firstAttribute="centerY" secondItem="iR7-Hb-OQH" secondAttribute="centerY" id="1QI-ql-nc7"/>
+                            <constraint firstItem="MzZ-KT-4dT" firstAttribute="leading" secondItem="Tr7-mF-7fL" secondAttribute="leading" id="Bal-Al-F4h"/>
+                            <constraint firstItem="f3s-gO-Pj3" firstAttribute="leading" secondItem="IOm-ww-A56" secondAttribute="trailing" constant="5" id="DR8-G0-CS3"/>
+                            <constraint firstItem="Tr7-mF-7fL" firstAttribute="trailing" secondItem="MzZ-KT-4dT" secondAttribute="trailing" id="DSf-j8-59R"/>
+                            <constraint firstItem="iR7-Hb-OQH" firstAttribute="top" secondItem="Tr7-mF-7fL" secondAttribute="top" constant="10" id="HGq-v2-MTc"/>
+                            <constraint firstItem="MzZ-KT-4dT" firstAttribute="top" secondItem="Tr7-mF-7fL" secondAttribute="top" constant="50" id="SZh-HB-dfc"/>
+                            <constraint firstItem="cNl-hF-uTl" firstAttribute="centerY" secondItem="iR7-Hb-OQH" secondAttribute="centerY" id="WFB-ir-jcq"/>
+                            <constraint firstItem="cNl-hF-uTl" firstAttribute="leading" secondItem="iR7-Hb-OQH" secondAttribute="trailing" id="bMV-dv-Rcu"/>
+                            <constraint firstItem="Tr7-mF-7fL" firstAttribute="trailing" secondItem="f3s-gO-Pj3" secondAttribute="trailing" constant="20" id="gIc-Ng-xdE"/>
+                            <constraint firstItem="iR7-Hb-OQH" firstAttribute="leading" secondItem="Tr7-mF-7fL" secondAttribute="leading" constant="20" id="iQN-z0-9La"/>
+                            <constraint firstItem="f3s-gO-Pj3" firstAttribute="centerY" secondItem="IOm-ww-A56" secondAttribute="centerY" id="q6s-aQ-SSA"/>
+                            <constraint firstItem="f3s-gO-Pj3" firstAttribute="centerY" secondItem="iR7-Hb-OQH" secondAttribute="centerY" id="wEL-gM-CWQ"/>
+                            <constraint firstItem="Tr7-mF-7fL" firstAttribute="bottom" secondItem="MzZ-KT-4dT" secondAttribute="bottom" id="wGU-hz-Vhv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Top Music Albums" id="uvc-qw-jrR"/>
+                    <connections>
+                        <outlet property="fetchAmountButton" destination="cNl-hF-uTl" id="FCZ-v2-Ve0"/>
+                        <outlet property="sortingButton" destination="f3s-gO-Pj3" id="acJ-LY-l1N"/>
+                        <outlet property="topAlbumTableView" destination="MzZ-KT-4dT" id="UBw-sU-l7e"/>
+                        <segue destination="gZv-bz-GPt" kind="show" identifier="albumDetail" id="5px-cd-mRh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kvH-FD-N2s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="624.63768115942037" y="117.85714285714285"/>
+        </scene>
+        <!--Album Name-->
+        <scene sceneID="dss-jZ-K0K">
+            <objects>
+                <viewController id="gZv-bz-GPt" customClass="AlbumDetailViewController" customModule="MusicApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d2F-sw-8uJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MissingArt" translatesAutoresizingMaskIntoConstraints="NO" id="AJ6-zc-JSg">
+                                <rect key="frame" x="57" y="108" width="300" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="AJ6-zc-JSg" secondAttribute="height" multiplier="3:2" id="5EC-hj-EKb"/>
+                                    <constraint firstAttribute="width" constant="300" id="C9O-E2-GSy"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G96-6z-3Wn">
+                                <rect key="frame" x="20" y="318" width="75" height="24.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="G96-6z-3Wn" secondAttribute="height" multiplier="73:24" id="SeB-V2-8f5"/>
+                                    <constraint firstAttribute="width" constant="75" id="Y9v-Zm-NUU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jS0-3g-2lf">
+                                <rect key="frame" x="100" y="320" width="294" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXc-eb-zZU">
+                                <rect key="frame" x="20" y="352.5" width="60" height="25.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JXc-eb-zZU" secondAttribute="height" multiplier="19:8" id="0Bd-Ua-bgJ"/>
+                                    <constraint firstAttribute="width" constant="60" id="hXs-1U-iuK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrA-OR-COh">
+                                <rect key="frame" x="85" y="355" width="309" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaQ-IQ-XAh">
+                                <rect key="frame" x="20" y="383" width="65" height="24.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CaQ-IQ-XAh" secondAttribute="height" multiplier="21:8" id="LA5-Dr-f6m"/>
+                                    <constraint firstAttribute="width" constant="65" id="hOi-Ao-aYA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genres" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQS-7s-wsO">
+                                <rect key="frame" x="90" y="385" width="304" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IYT-BX-3Jg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="G96-6z-3Wn" firstAttribute="leading" secondItem="IYT-BX-3Jg" secondAttribute="leading" constant="20" id="4xg-ih-9W1"/>
+                            <constraint firstItem="hrA-OR-COh" firstAttribute="centerY" secondItem="JXc-eb-zZU" secondAttribute="centerY" id="5DD-Ha-Dft"/>
+                            <constraint firstItem="CaQ-IQ-XAh" firstAttribute="top" secondItem="JXc-eb-zZU" secondAttribute="bottom" constant="5" id="5Qv-yl-m8K"/>
+                            <constraint firstItem="HQS-7s-wsO" firstAttribute="leading" secondItem="CaQ-IQ-XAh" secondAttribute="trailing" constant="5" id="DdF-X9-MeM"/>
+                            <constraint firstItem="hrA-OR-COh" firstAttribute="leading" secondItem="JXc-eb-zZU" secondAttribute="trailing" constant="5" id="EwN-J1-V31"/>
+                            <constraint firstItem="jS0-3g-2lf" firstAttribute="leading" secondItem="G96-6z-3Wn" secondAttribute="trailing" constant="5" id="GVa-mB-Zxf"/>
+                            <constraint firstItem="JXc-eb-zZU" firstAttribute="top" secondItem="G96-6z-3Wn" secondAttribute="bottom" constant="10" id="H7x-2K-koF"/>
+                            <constraint firstItem="AJ6-zc-JSg" firstAttribute="top" secondItem="IYT-BX-3Jg" secondAttribute="top" constant="20" id="IJA-aH-q4Z"/>
+                            <constraint firstItem="IYT-BX-3Jg" firstAttribute="trailing" secondItem="hrA-OR-COh" secondAttribute="trailing" constant="20" id="Uxf-Hm-4Kv"/>
+                            <constraint firstItem="IYT-BX-3Jg" firstAttribute="trailing" secondItem="HQS-7s-wsO" secondAttribute="trailing" constant="20" id="WgA-JO-7Jt"/>
+                            <constraint firstItem="G96-6z-3Wn" firstAttribute="top" secondItem="AJ6-zc-JSg" secondAttribute="bottom" constant="10" id="b0U-ON-VTT"/>
+                            <constraint firstItem="HQS-7s-wsO" firstAttribute="centerY" secondItem="CaQ-IQ-XAh" secondAttribute="centerY" id="e8q-Lh-5TV"/>
+                            <constraint firstItem="AJ6-zc-JSg" firstAttribute="centerX" secondItem="d2F-sw-8uJ" secondAttribute="centerX" id="fsS-ux-u6Q"/>
+                            <constraint firstItem="jS0-3g-2lf" firstAttribute="centerY" secondItem="G96-6z-3Wn" secondAttribute="centerY" id="kQ7-sF-Twh"/>
+                            <constraint firstItem="IYT-BX-3Jg" firstAttribute="trailing" secondItem="jS0-3g-2lf" secondAttribute="trailing" constant="20" id="kew-Ut-33u"/>
+                            <constraint firstItem="JXc-eb-zZU" firstAttribute="leading" secondItem="G96-6z-3Wn" secondAttribute="leading" id="wkW-sa-wMF"/>
+                            <constraint firstItem="CaQ-IQ-XAh" firstAttribute="leading" secondItem="JXc-eb-zZU" secondAttribute="leading" id="zlm-iC-DmD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Album Name" id="DXh-Hu-ola"/>
+                    <connections>
+                        <outlet property="albumArtImageView" destination="AJ6-zc-JSg" id="bz5-76-B6B"/>
+                        <outlet property="albumNameLabel" destination="jS0-3g-2lf" id="7Be-Ic-ZZ6"/>
+                        <outlet property="artistNameLabel" destination="hrA-OR-COh" id="btW-h2-60H"/>
+                        <outlet property="genreLabel" destination="HQS-7s-wsO" id="FhO-Cp-0w9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Waw-6J-Mz7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1460.8695652173915" y="117.85714285714285"/>
+        </scene>
+        <!--Music Navigation View Controller-->
+        <scene sceneID="hz4-iN-3QC">
+            <objects>
+                <navigationController id="CcM-J3-vio" customClass="MusicNavigationViewController" customModule="MusicApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fbQ-y9-sq2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ndd-n6-Rej" kind="relationship" relationship="rootViewController" id="ZjR-tj-DG8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="voh-H6-ocq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-270" y="118"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="MissingArt" width="679.478271484375" height="881.6724853515625"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
