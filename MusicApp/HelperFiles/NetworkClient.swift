@@ -14,6 +14,7 @@ class NetworkClient{
             if let err = error{
                 print("Error fetching data: \(err.localizedDescription)")
                 onError(err)
+                return
             }
             
             guard let data = data else { return }
