@@ -40,6 +40,11 @@ class NetworkClient{
                 guard let feed = json["feed"] as? [String: Any] else { return }
                 
                 let albums = try JSONDecoder().decode([MusicAlbum].self, from: JSONSerialization.data(withJSONObject: feed["results"]!, options: .prettyPrinted))
+               
+                for (idx, _) in albums.enumerated(){
+                    albums[idx].uniqueId = idx
+                }
+                
                 onComplete(.success(albums))
                 
             } catch let jsonErr {

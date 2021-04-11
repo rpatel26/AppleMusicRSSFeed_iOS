@@ -37,6 +37,8 @@ class TopAlbumViewController: UIViewController {
         
         activityIndicator.startAnimating()
         getTopMusicAlbum(withURL: URL.TOP_ALBUM_URL[1])
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(topAlbumListUpdated), name: NSNotification.Name.RELOAD_DATA, object: nil)
     }
     
     private func getTopMusicAlbum(withURL url: URL){
@@ -45,19 +47,11 @@ class TopAlbumViewController: UIViewController {
             switch result {
                 case .success(let musicAlbums):
                     self.albums = musicAlbums
-                    let group = DispatchGroup()
-                    group.enter()
                     DispatchQueue.global().async {
                         self.sortAlbum(by: self.sortingCriteria)
-                        group.leave()
+                        NotificationCenter.default.post(name: NSNotification.Name.RELOAD_DATA, object: nil)
                     }
                     
-                    group.notify(queue: .global()) {
-                        DispatchQueue.main.async {
-                            self.topAlbumTableView.reloadData()
-                            self.activityIndicator.stopAnimating()
-                        }
-                    }
                 case .failure(let error):
                     DispatchQueue.main.async {
                         self.activityIndicator.stopAnimating()
@@ -80,6 +74,18 @@ class TopAlbumViewController: UIViewController {
                 return (album1.name ?? "") < (album2.name ?? "")
             }
         }
+        else if value == "Ratings"{
+            self.albums.sort { (album1, album2) -> Bool in
+                return (album1.uniqueId ?? -1) < (album2.uniqueId ?? -1)
+            }
+        }
+    }
+    
+    @objc func topAlbumListUpdated(){
+        DispatchQueue.main.async {
+            self.topAlbumTableView.reloadData()
+            self.activityIndicator.stopAnimating()
+        }
     }
     
     private func configureSortingList() {
@@ -91,18 +97,9 @@ class TopAlbumViewController: UIViewController {
             self.sortingButton.setTitle(value, for: .normal)
             self.sortingCriteria = value
             
-            if index != 0{
-                self.activityIndicator.startAnimating()
-                self.sortAlbum(by: value)
-                DispatchQueue.main.async {
-                    self.topAlbumTableView.reloadData()
-                    self.activityIndicator.stopAnimating()
-                }
-            }
-            else{
-                self.activityIndicator.startAnimating()
-                self.getTopMusicAlbum(withURL: URL.TOP_ALBUM_URL[self.fetchAmountIndex])
-            }
+            self.activityIndicator.startAnimating()
+            self.sortAlbum(by: value)
+            self.topAlbumListUpdated()
         }
     }
     

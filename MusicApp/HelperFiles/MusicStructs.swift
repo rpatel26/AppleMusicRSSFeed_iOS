@@ -5,7 +5,7 @@
 //  Created by Ravi Patel on 4/6/21.
 //
 
-struct MusicAlbum: Decodable{
+class MusicAlbum: Decodable{
     let artistName: String?
     let id: String?
     let releaseDate: String?
@@ -16,6 +16,7 @@ struct MusicAlbum: Decodable{
     let artistUrl: String?
     let genres: [MusicGenre]?
     let url: String?
+    var uniqueId: Int?
 }
 
 struct MusicGenre: Decodable {

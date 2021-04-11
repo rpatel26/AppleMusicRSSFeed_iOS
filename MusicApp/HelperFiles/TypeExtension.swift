@@ -24,3 +24,7 @@ extension URL{
         URL(string: String.TOP_ALBUM_URL_STRINGS[3])!
     ]
 }
+
+extension NSNotification.Name {
+    static let RELOAD_DATA = NSNotification.Name("Data_Ready_For_Reload")
+}
