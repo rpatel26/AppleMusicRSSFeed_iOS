@@ -57,4 +57,28 @@ class AlbumDetailViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func artistURLClicked(_ sender: Any) {
+        guard let url_string = album?.artistUrl else {
+            let alert = UIAlertController(title: "Error", message: "URL Does not exist.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        print("Artist URL: \(url_string)")
+        let url = URL(string: url_string)!
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    
+    @IBAction func musicURLClicked(_ sender: Any) {
+        guard let url_string = album?.url else {
+            let alert = UIAlertController(title: "Error", message: "URL Does not exist.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        print("Music URL: \(url_string)")
+        let url = URL(string: url_string)!
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
 }

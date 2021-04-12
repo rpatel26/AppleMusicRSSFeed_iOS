@@ -181,23 +181,75 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist URL:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSf-J0-XnO">
+                                <rect key="frame" x="20" y="412.5" width="105" height="24.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="W6h-dK-0Xc"/>
+                                    <constraint firstAttribute="width" secondItem="KSf-J0-XnO" secondAttribute="height" multiplier="13:3" id="caS-ho-ePD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sx-bN-Qyz">
+                                <rect key="frame" x="130" y="406" width="90" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="BsZ-6U-Pyn"/>
+                                    <constraint firstAttribute="width" secondItem="9sx-bN-Qyz" secondAttribute="height" multiplier="71:30" id="cay-Ts-Gwl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Click Here"/>
+                                <connections>
+                                    <action selector="artistURLClicked:" destination="gZv-bz-GPt" eventType="touchUpInside" id="mth-vK-CfT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music URL:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjh-Ec-4eC">
+                                <rect key="frame" x="20" y="442" width="110" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hjh-Ec-4eC" secondAttribute="height" multiplier="55:12" id="LYM-FV-k5q"/>
+                                    <constraint firstAttribute="width" constant="110" id="VYA-Mg-Mxb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAe-Lh-6TZ">
+                                <rect key="frame" x="135" y="436" width="90" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JAe-Lh-6TZ" secondAttribute="height" multiplier="83:33" id="XzO-Lv-iC9"/>
+                                    <constraint firstAttribute="width" constant="90" id="fbd-Zm-gT9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Click Here"/>
+                                <connections>
+                                    <action selector="musicURLClicked:" destination="gZv-bz-GPt" eventType="touchUpInside" id="5sh-Nw-Vhq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IYT-BX-3Jg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="KSf-J0-XnO" firstAttribute="top" secondItem="CaQ-IQ-XAh" secondAttribute="bottom" constant="5" id="0UA-Ak-Nrk"/>
+                            <constraint firstItem="JAe-Lh-6TZ" firstAttribute="leading" secondItem="hjh-Ec-4eC" secondAttribute="trailing" constant="5" id="1aV-JF-Abc"/>
                             <constraint firstItem="G96-6z-3Wn" firstAttribute="leading" secondItem="IYT-BX-3Jg" secondAttribute="leading" constant="20" id="4xg-ih-9W1"/>
                             <constraint firstItem="hrA-OR-COh" firstAttribute="centerY" secondItem="JXc-eb-zZU" secondAttribute="centerY" id="5DD-Ha-Dft"/>
                             <constraint firstItem="CaQ-IQ-XAh" firstAttribute="top" secondItem="JXc-eb-zZU" secondAttribute="bottom" constant="5" id="5Qv-yl-m8K"/>
+                            <constraint firstItem="JAe-Lh-6TZ" firstAttribute="centerY" secondItem="hjh-Ec-4eC" secondAttribute="centerY" id="70z-aA-WQJ"/>
+                            <constraint firstItem="hjh-Ec-4eC" firstAttribute="top" secondItem="KSf-J0-XnO" secondAttribute="bottom" constant="5" id="A5d-YJ-Rxd"/>
                             <constraint firstItem="HQS-7s-wsO" firstAttribute="leading" secondItem="CaQ-IQ-XAh" secondAttribute="trailing" constant="5" id="DdF-X9-MeM"/>
                             <constraint firstItem="hrA-OR-COh" firstAttribute="leading" secondItem="JXc-eb-zZU" secondAttribute="trailing" constant="5" id="EwN-J1-V31"/>
+                            <constraint firstItem="KSf-J0-XnO" firstAttribute="leading" secondItem="CaQ-IQ-XAh" secondAttribute="leading" id="GSJ-G8-kE7"/>
                             <constraint firstItem="jS0-3g-2lf" firstAttribute="leading" secondItem="G96-6z-3Wn" secondAttribute="trailing" constant="5" id="GVa-mB-Zxf"/>
                             <constraint firstItem="JXc-eb-zZU" firstAttribute="top" secondItem="G96-6z-3Wn" secondAttribute="bottom" constant="10" id="H7x-2K-koF"/>
                             <constraint firstItem="AJ6-zc-JSg" firstAttribute="top" secondItem="IYT-BX-3Jg" secondAttribute="top" constant="20" id="IJA-aH-q4Z"/>
+                            <constraint firstItem="9sx-bN-Qyz" firstAttribute="leading" secondItem="KSf-J0-XnO" secondAttribute="trailing" constant="5" id="Ih0-uD-aKv"/>
+                            <constraint firstItem="9sx-bN-Qyz" firstAttribute="centerY" secondItem="KSf-J0-XnO" secondAttribute="centerY" id="NWe-Rq-AOT"/>
                             <constraint firstItem="IYT-BX-3Jg" firstAttribute="trailing" secondItem="hrA-OR-COh" secondAttribute="trailing" constant="20" id="Uxf-Hm-4Kv"/>
                             <constraint firstItem="IYT-BX-3Jg" firstAttribute="trailing" secondItem="HQS-7s-wsO" secondAttribute="trailing" constant="20" id="WgA-JO-7Jt"/>
                             <constraint firstItem="G96-6z-3Wn" firstAttribute="top" secondItem="AJ6-zc-JSg" secondAttribute="bottom" constant="10" id="b0U-ON-VTT"/>
                             <constraint firstItem="HQS-7s-wsO" firstAttribute="centerY" secondItem="CaQ-IQ-XAh" secondAttribute="centerY" id="e8q-Lh-5TV"/>
                             <constraint firstItem="AJ6-zc-JSg" firstAttribute="centerX" secondItem="d2F-sw-8uJ" secondAttribute="centerX" id="fsS-ux-u6Q"/>
+                            <constraint firstItem="hjh-Ec-4eC" firstAttribute="leading" secondItem="KSf-J0-XnO" secondAttribute="leading" id="jcp-it-lTU"/>
                             <constraint firstItem="jS0-3g-2lf" firstAttribute="centerY" secondItem="G96-6z-3Wn" secondAttribute="centerY" id="kQ7-sF-Twh"/>
                             <constraint firstItem="IYT-BX-3Jg" firstAttribute="trailing" secondItem="jS0-3g-2lf" secondAttribute="trailing" constant="20" id="kew-Ut-33u"/>
                             <constraint firstItem="JXc-eb-zZU" firstAttribute="leading" secondItem="G96-6z-3Wn" secondAttribute="leading" id="wkW-sa-wMF"/>

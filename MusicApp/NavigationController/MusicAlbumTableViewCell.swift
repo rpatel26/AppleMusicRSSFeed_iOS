@@ -35,6 +35,7 @@ class MusicAlbumTableViewCell: UITableViewCell {
         contentView.addSubview(albumArt)
         contentView.addSubview(albumName)
         contentView.addSubview(artistName)
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
