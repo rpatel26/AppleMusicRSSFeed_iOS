@@ -256,17 +256,55 @@
                             <constraint firstItem="CaQ-IQ-XAh" firstAttribute="leading" secondItem="JXc-eb-zZU" secondAttribute="leading" id="zlm-iC-DmD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Album Name" id="DXh-Hu-ola"/>
+                    <navigationItem key="navigationItem" title="Album Name" id="DXh-Hu-ola">
+                        <barButtonItem key="backBarButtonItem" title="Back to Album Detail" id="UDj-K2-qRx"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="albumArtImageView" destination="AJ6-zc-JSg" id="bz5-76-B6B"/>
                         <outlet property="albumNameLabel" destination="jS0-3g-2lf" id="7Be-Ic-ZZ6"/>
                         <outlet property="artistNameLabel" destination="hrA-OR-COh" id="btW-h2-60H"/>
                         <outlet property="genreLabel" destination="HQS-7s-wsO" id="FhO-Cp-0w9"/>
+                        <segue destination="c1W-2s-w57" kind="show" identifier="toWebView" id="bEL-8W-efZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Waw-6J-Mz7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1460.8695652173915" y="117.85714285714285"/>
+        </scene>
+        <!--Web Kit View Controller-->
+        <scene sceneID="yyD-eu-nfB">
+            <objects>
+                <viewController id="c1W-2s-w57" customClass="WebKitViewController" customModule="MusicApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="chf-lD-bAM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lnC-zn-P6l">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Aq5-Rf-0Mq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Aq5-Rf-0Mq" firstAttribute="bottom" secondItem="lnC-zn-P6l" secondAttribute="bottom" id="8YQ-zT-N7S"/>
+                            <constraint firstItem="Aq5-Rf-0Mq" firstAttribute="trailing" secondItem="lnC-zn-P6l" secondAttribute="trailing" id="eaf-fp-tXg"/>
+                            <constraint firstItem="lnC-zn-P6l" firstAttribute="leading" secondItem="Aq5-Rf-0Mq" secondAttribute="leading" id="obD-o1-6Uo"/>
+                            <constraint firstItem="lnC-zn-P6l" firstAttribute="top" secondItem="Aq5-Rf-0Mq" secondAttribute="top" id="tG2-KB-abW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="IEh-Tx-6OW"/>
+                    <connections>
+                        <outlet property="webKitWebView" destination="lnC-zn-P6l" id="dAg-WG-r6g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HeO-lZ-HMV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2326" y="118"/>
         </scene>
         <!--Music Navigation View Controller-->
         <scene sceneID="hz4-iN-3QC">

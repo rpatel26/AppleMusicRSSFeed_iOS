@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E0FD2F2262412CF0012E2E4 /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FD2F1262412CF0012E2E4 /* WebKitViewController.swift */; };
 		5ED1C220261CC05C002AB524 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED1C21F261CC05C002AB524 /* AppDelegate.swift */; };
 		5ED1C222261CC05C002AB524 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED1C221261CC05C002AB524 /* SceneDelegate.swift */; };
 		5ED1C229261CC05E002AB524 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ED1C228261CC05E002AB524 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		07BFC28B6EBAD54C25D8D836 /* Pods-MusicApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp.release.xcconfig"; path = "Target Support Files/Pods-MusicApp/Pods-MusicApp.release.xcconfig"; sourceTree = "<group>"; };
 		264860911E342B93EA913CE1 /* Pods-MusicApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp/Pods-MusicApp.debug.xcconfig"; sourceTree = "<group>"; };
 		44FB73165015DECBB5170E66 /* Pods_MusicApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E0FD2F1262412CF0012E2E4 /* WebKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitViewController.swift; sourceTree = "<group>"; };
 		5ED1C21C261CC05C002AB524 /* MusicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED1C21F261CC05C002AB524 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ED1C221261CC05C002AB524 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				5EEE5C59261CEDED001F2893 /* MusicNavigationViewController.swift */,
 				5EEE5C65261CEFAB001F2893 /* TopAlbumViewController.swift */,
 				5EEE5C6D261CFA68001F2893 /* AlbumDetailViewController.swift */,
+				5E0FD2F1262412CF0012E2E4 /* WebKitViewController.swift */,
 				5EEE5C69261CF1B5001F2893 /* MusicAlbumTableViewCell.swift */,
 			);
 			path = NavigationController;
@@ -247,6 +250,7 @@
 				5EEE5C6E261CFA68001F2893 /* AlbumDetailViewController.swift in Sources */,
 				5EEE5C49261CDA07001F2893 /* NetworkClient.swift in Sources */,
 				5EEE5C4C261CDAB5001F2893 /* MusicStructs.swift in Sources */,
+				5E0FD2F2262412CF0012E2E4 /* WebKitViewController.swift in Sources */,
 				5EEE5C5A261CEDED001F2893 /* MusicNavigationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

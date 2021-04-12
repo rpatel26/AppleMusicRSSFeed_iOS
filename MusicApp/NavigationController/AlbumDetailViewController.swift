@@ -15,6 +15,7 @@ class AlbumDetailViewController: UIViewController {
     @IBOutlet weak var genreLabel: UILabel!
     
     var album: MusicAlbum?
+    var load_url: URL?
     var networkClient: NetworkClient!
     
     override func viewDidLoad() {
@@ -67,7 +68,8 @@ class AlbumDetailViewController: UIViewController {
         }
         print("Artist URL: \(url_string)")
         let url = URL(string: url_string)!
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        load_url = url
+        performSegue(withIdentifier: "toWebView", sender: nil)
     }
     
     @IBAction func musicURLClicked(_ sender: Any) {
@@ -79,6 +81,12 @@ class AlbumDetailViewController: UIViewController {
         }
         print("Music URL: \(url_string)")
         let url = URL(string: url_string)!
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        load_url = url
+        performSegue(withIdentifier: "toWebView", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! WebKitViewController
+        destination.url = load_url
     }
 }
