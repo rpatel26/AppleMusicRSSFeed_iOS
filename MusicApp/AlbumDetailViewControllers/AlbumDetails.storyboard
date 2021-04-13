@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sPu-TL-Fbh">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Album Name-->
+        <scene sceneID="0mF-Xk-rfR">
+            <objects>
+                <viewController id="sPu-TL-Fbh" customClass="AlbumDetailViewController" customModule="MusicApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fKl-cp-fkK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MissingArt" translatesAutoresizingMaskIntoConstraints="NO" id="WI7-RO-3X3">
+                                <rect key="frame" x="57" y="64" width="300" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="WI7-RO-3X3" secondAttribute="height" multiplier="3:2" id="3Xp-qI-44q"/>
+                                    <constraint firstAttribute="width" constant="300" id="Ldn-7P-spO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMP-VK-BPW">
+                                <rect key="frame" x="20" y="274" width="75" height="24.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nMP-VK-BPW" secondAttribute="height" multiplier="73:24" id="AwF-lm-Mu9"/>
+                                    <constraint firstAttribute="width" constant="75" id="neV-q3-NpP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="565-C1-qVk">
+                                <rect key="frame" x="100" y="276" width="294" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXk-zx-DYl">
+                                <rect key="frame" x="20" y="308.5" width="60" height="25.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="T6x-uS-Bqn"/>
+                                    <constraint firstAttribute="width" secondItem="bXk-zx-DYl" secondAttribute="height" multiplier="19:8" id="hPu-Ud-Wjr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFU-dn-R06">
+                                <rect key="frame" x="85" y="311" width="309" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e99-0q-GBi">
+                                <rect key="frame" x="20" y="339" width="65" height="24.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="e99-0q-GBi" secondAttribute="height" multiplier="21:8" id="BKK-Ca-3Qb"/>
+                                    <constraint firstAttribute="width" constant="65" id="RSc-XK-zXg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genres" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4f-7x-SoK">
+                                <rect key="frame" x="90" y="341" width="304" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist URL:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kih-xa-SF3">
+                                <rect key="frame" x="20" y="368.5" width="105" height="24.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Kih-xa-SF3" secondAttribute="height" multiplier="13:3" id="ZJa-Vm-0NI"/>
+                                    <constraint firstAttribute="width" constant="105" id="ok6-Y0-bqY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0n7-gE-cz2">
+                                <rect key="frame" x="130" y="362" width="90" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="O40-LV-Hhj"/>
+                                    <constraint firstAttribute="width" secondItem="0n7-gE-cz2" secondAttribute="height" multiplier="71:30" id="vwB-A8-Qlg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Click Here"/>
+                                <connections>
+                                    <action selector="artistURLClicked:" destination="sPu-TL-Fbh" eventType="touchUpInside" id="0Xl-Uy-myP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music URL:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qx7-kv-X39">
+                                <rect key="frame" x="20" y="398" width="110" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="0Iy-bI-7Cd"/>
+                                    <constraint firstAttribute="width" secondItem="Qx7-kv-X39" secondAttribute="height" multiplier="55:12" id="h6r-u6-Ot4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bj-63-n4a">
+                                <rect key="frame" x="135" y="392" width="90" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7bj-63-n4a" secondAttribute="height" multiplier="83:33" id="RnV-af-CFF"/>
+                                    <constraint firstAttribute="width" constant="90" id="bTK-um-cMk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Click Here"/>
+                                <connections>
+                                    <action selector="musicURLClicked:" destination="sPu-TL-Fbh" eventType="touchUpInside" id="gCz-1w-eOT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4lN-bB-j41"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nMP-VK-BPW" firstAttribute="top" secondItem="WI7-RO-3X3" secondAttribute="bottom" constant="10" id="2kk-Nf-6g9"/>
+                            <constraint firstItem="Qx7-kv-X39" firstAttribute="leading" secondItem="Kih-xa-SF3" secondAttribute="leading" id="4sZ-PV-QKa"/>
+                            <constraint firstItem="Kih-xa-SF3" firstAttribute="leading" secondItem="e99-0q-GBi" secondAttribute="leading" id="7Nd-WB-1t2"/>
+                            <constraint firstItem="iFU-dn-R06" firstAttribute="leading" secondItem="bXk-zx-DYl" secondAttribute="trailing" constant="5" id="ENc-fR-AkR"/>
+                            <constraint firstItem="0n7-gE-cz2" firstAttribute="leading" secondItem="Kih-xa-SF3" secondAttribute="trailing" constant="5" id="Ejt-rj-uV9"/>
+                            <constraint firstItem="Qx7-kv-X39" firstAttribute="top" secondItem="Kih-xa-SF3" secondAttribute="bottom" constant="5" id="MNf-ET-Rqe"/>
+                            <constraint firstItem="4lN-bB-j41" firstAttribute="trailing" secondItem="565-C1-qVk" secondAttribute="trailing" constant="20" id="QTY-kG-hMs"/>
+                            <constraint firstItem="e99-0q-GBi" firstAttribute="top" secondItem="bXk-zx-DYl" secondAttribute="bottom" constant="5" id="R6x-xl-mdC"/>
+                            <constraint firstItem="bXk-zx-DYl" firstAttribute="leading" secondItem="nMP-VK-BPW" secondAttribute="leading" id="Sqd-po-Ree"/>
+                            <constraint firstItem="4lN-bB-j41" firstAttribute="trailing" secondItem="iFU-dn-R06" secondAttribute="trailing" constant="20" id="TX7-hb-M2Y"/>
+                            <constraint firstItem="WI7-RO-3X3" firstAttribute="centerX" secondItem="fKl-cp-fkK" secondAttribute="centerX" id="ZB2-Qq-4mO"/>
+                            <constraint firstItem="Kih-xa-SF3" firstAttribute="top" secondItem="e99-0q-GBi" secondAttribute="bottom" constant="5" id="Zhk-Lj-XLh"/>
+                            <constraint firstItem="Z4f-7x-SoK" firstAttribute="centerY" secondItem="e99-0q-GBi" secondAttribute="centerY" id="ag8-O9-2fU"/>
+                            <constraint firstItem="0n7-gE-cz2" firstAttribute="centerY" secondItem="Kih-xa-SF3" secondAttribute="centerY" id="bGj-fO-Pxd"/>
+                            <constraint firstItem="4lN-bB-j41" firstAttribute="trailing" secondItem="Z4f-7x-SoK" secondAttribute="trailing" constant="20" id="f3R-F6-FsM"/>
+                            <constraint firstItem="7bj-63-n4a" firstAttribute="centerY" secondItem="Qx7-kv-X39" secondAttribute="centerY" id="fkp-dn-JfK"/>
+                            <constraint firstItem="e99-0q-GBi" firstAttribute="leading" secondItem="bXk-zx-DYl" secondAttribute="leading" id="hBu-Zn-QJV"/>
+                            <constraint firstItem="7bj-63-n4a" firstAttribute="leading" secondItem="Qx7-kv-X39" secondAttribute="trailing" constant="5" id="hZw-Ti-nav"/>
+                            <constraint firstItem="iFU-dn-R06" firstAttribute="centerY" secondItem="bXk-zx-DYl" secondAttribute="centerY" id="hvk-xm-pek"/>
+                            <constraint firstItem="nMP-VK-BPW" firstAttribute="leading" secondItem="4lN-bB-j41" secondAttribute="leading" constant="20" id="l6I-f2-ARO"/>
+                            <constraint firstItem="565-C1-qVk" firstAttribute="centerY" secondItem="nMP-VK-BPW" secondAttribute="centerY" id="lQ4-Ax-Rg3"/>
+                            <constraint firstItem="bXk-zx-DYl" firstAttribute="top" secondItem="nMP-VK-BPW" secondAttribute="bottom" constant="10" id="nhR-tO-HCZ"/>
+                            <constraint firstItem="WI7-RO-3X3" firstAttribute="top" secondItem="4lN-bB-j41" secondAttribute="top" constant="20" id="nut-gK-B3y"/>
+                            <constraint firstItem="Z4f-7x-SoK" firstAttribute="leading" secondItem="e99-0q-GBi" secondAttribute="trailing" constant="5" id="owB-bP-IEb"/>
+                            <constraint firstItem="565-C1-qVk" firstAttribute="leading" secondItem="nMP-VK-BPW" secondAttribute="trailing" constant="5" id="pbU-Px-RQi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Album Name" id="mM9-Om-s34">
+                        <barButtonItem key="backBarButtonItem" title="Back to Album Detail" id="8bT-8I-Hw5"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="albumArtImageView" destination="WI7-RO-3X3" id="l9t-Ci-4s5"/>
+                        <outlet property="albumNameLabel" destination="565-C1-qVk" id="73a-jl-SHl"/>
+                        <outlet property="artistNameLabel" destination="iFU-dn-R06" id="YEo-Jx-9ee"/>
+                        <outlet property="genreLabel" destination="Z4f-7x-SoK" id="nUA-mz-g8V"/>
+                        <segue destination="3Ax-bL-c4u" kind="showDetail" identifier="toWebView" id="aAX-6x-Aif"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Atc-hK-Zog" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2371.0144927536235" y="117.85714285714285"/>
+        </scene>
+        <!--Web Kit View Controller-->
+        <scene sceneID="q6U-EC-1b2">
+            <objects>
+                <viewController id="3Ax-bL-c4u" customClass="WebKitViewController" customModule="MusicApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xmo-hI-zC3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQs-Xn-wp0">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="X0W-eG-5lb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="X0W-eG-5lb" firstAttribute="bottom" secondItem="MQs-Xn-wp0" secondAttribute="bottom" id="L5A-Km-P1O"/>
+                            <constraint firstItem="MQs-Xn-wp0" firstAttribute="top" secondItem="X0W-eG-5lb" secondAttribute="top" id="Rr3-Ev-VEE"/>
+                            <constraint firstItem="X0W-eG-5lb" firstAttribute="trailing" secondItem="MQs-Xn-wp0" secondAttribute="trailing" id="j1z-Ex-Lmw"/>
+                            <constraint firstItem="MQs-Xn-wp0" firstAttribute="leading" secondItem="X0W-eG-5lb" secondAttribute="leading" id="k1A-0r-S7q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="D3e-uY-gVb"/>
+                    <connections>
+                        <outlet property="webKitWebView" destination="MQs-Xn-wp0" id="DlB-12-g9F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DhB-iC-Ctn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3229" y="118"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="MissingArt" width="679.478271484375" height="881.6724853515625"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

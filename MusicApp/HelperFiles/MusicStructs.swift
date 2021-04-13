@@ -17,6 +17,7 @@ class MusicAlbum: Decodable{
     let genres: [MusicGenre]?
     let url: String?
     var uniqueId: Int?
+    var isFavorited: Bool?
 }
 
 struct MusicGenre: Decodable {

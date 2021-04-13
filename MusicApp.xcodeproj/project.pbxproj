@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5E0FD2F2262412CF0012E2E4 /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FD2F1262412CF0012E2E4 /* WebKitViewController.swift */; };
+		5E0FD2F6262416E20012E2E4 /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0FD2F5262416E20012E2E4 /* TabBarController.storyboard */; };
+		5E0FD2FD2624181D0012E2E4 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FD2FC2624181D0012E2E4 /* FavoritesViewController.swift */; };
+		5E0FD301262419910012E2E4 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0FD300262419910012E2E4 /* Favorites.storyboard */; };
+		5E0FD30526241ABD0012E2E4 /* AlbumDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0FD30426241ABD0012E2E4 /* AlbumDetails.storyboard */; };
+		5E55EFFC26242CA700555A2A /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55EFFB26242CA700555A2A /* Protocols.swift */; };
 		5ED1C220261CC05C002AB524 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED1C21F261CC05C002AB524 /* AppDelegate.swift */; };
 		5ED1C222261CC05C002AB524 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED1C221261CC05C002AB524 /* SceneDelegate.swift */; };
 		5ED1C229261CC05E002AB524 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ED1C228261CC05E002AB524 /* Assets.xcassets */; };
@@ -28,6 +33,11 @@
 		264860911E342B93EA913CE1 /* Pods-MusicApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp/Pods-MusicApp.debug.xcconfig"; sourceTree = "<group>"; };
 		44FB73165015DECBB5170E66 /* Pods_MusicApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E0FD2F1262412CF0012E2E4 /* WebKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitViewController.swift; sourceTree = "<group>"; };
+		5E0FD2F5262416E20012E2E4 /* TabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
+		5E0FD2FC2624181D0012E2E4 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		5E0FD300262419910012E2E4 /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
+		5E0FD30426241ABD0012E2E4 /* AlbumDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlbumDetails.storyboard; sourceTree = "<group>"; };
+		5E55EFFB26242CA700555A2A /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		5ED1C21C261CC05C002AB524 /* MusicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED1C21F261CC05C002AB524 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ED1C221261CC05C002AB524 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +83,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5E0FD2FB262418020012E2E4 /* FavoritesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5E0FD300262419910012E2E4 /* Favorites.storyboard */,
+				5E0FD2FC2624181D0012E2E4 /* FavoritesViewController.swift */,
+			);
+			path = FavoritesViewController;
+			sourceTree = "<group>";
+		};
+		5E0FD30826241C610012E2E4 /* AlbumDetailViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5E0FD30426241ABD0012E2E4 /* AlbumDetails.storyboard */,
+				5EEE5C6D261CFA68001F2893 /* AlbumDetailViewController.swift */,
+				5E0FD2F1262412CF0012E2E4 /* WebKitViewController.swift */,
+			);
+			path = AlbumDetailViewControllers;
+			sourceTree = "<group>";
+		};
 		5ED1C213261CC05B002AB524 = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +123,11 @@
 		5ED1C21E261CC05C002AB524 /* MusicApp */ = {
 			isa = PBXGroup;
 			children = (
-				5EEE5C63261CEF59001F2893 /* NavigationController */,
 				5EEE5C62261CEF3C001F2893 /* HelperFiles */,
+				5E0FD30826241C610012E2E4 /* AlbumDetailViewControllers */,
+				5E0FD2FB262418020012E2E4 /* FavoritesViewController */,
+				5EEE5C63261CEF59001F2893 /* TopAlbumsNavigationController */,
+				5E0FD2F5262416E20012E2E4 /* TabBarController.storyboard */,
 				5ED1C21F261CC05C002AB524 /* AppDelegate.swift */,
 				5ED1C221261CC05C002AB524 /* SceneDelegate.swift */,
 				5ED1C228261CC05E002AB524 /* Assets.xcassets */,
@@ -111,21 +143,20 @@
 				5EEE5C48261CDA07001F2893 /* NetworkClient.swift */,
 				5EEE5C4B261CDAB5001F2893 /* MusicStructs.swift */,
 				5EEE5C4E261CDAE0001F2893 /* TypeExtension.swift */,
+				5E55EFFB26242CA700555A2A /* Protocols.swift */,
 			);
 			path = HelperFiles;
 			sourceTree = "<group>";
 		};
-		5EEE5C63261CEF59001F2893 /* NavigationController */ = {
+		5EEE5C63261CEF59001F2893 /* TopAlbumsNavigationController */ = {
 			isa = PBXGroup;
 			children = (
 				5EEE5C55261CECD8001F2893 /* NavigationController.storyboard */,
 				5EEE5C59261CEDED001F2893 /* MusicNavigationViewController.swift */,
 				5EEE5C65261CEFAB001F2893 /* TopAlbumViewController.swift */,
-				5EEE5C6D261CFA68001F2893 /* AlbumDetailViewController.swift */,
-				5E0FD2F1262412CF0012E2E4 /* WebKitViewController.swift */,
 				5EEE5C69261CF1B5001F2893 /* MusicAlbumTableViewCell.swift */,
 			);
-			path = NavigationController;
+			path = TopAlbumsNavigationController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,7 +220,10 @@
 			files = (
 				5ED1C22C261CC05E002AB524 /* LaunchScreen.storyboard in Resources */,
 				5ED1C229261CC05E002AB524 /* Assets.xcassets in Resources */,
+				5E0FD2F6262416E20012E2E4 /* TabBarController.storyboard in Resources */,
 				5EEE5C56261CECD9001F2893 /* NavigationController.storyboard in Resources */,
+				5E0FD301262419910012E2E4 /* Favorites.storyboard in Resources */,
+				5E0FD30526241ABD0012E2E4 /* AlbumDetails.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,9 +279,11 @@
 				5EEE5C6A261CF1B5001F2893 /* MusicAlbumTableViewCell.swift in Sources */,
 				5EEE5C4F261CDAE0001F2893 /* TypeExtension.swift in Sources */,
 				5EEE5C66261CEFAB001F2893 /* TopAlbumViewController.swift in Sources */,
+				5E55EFFC26242CA700555A2A /* Protocols.swift in Sources */,
 				5ED1C220261CC05C002AB524 /* AppDelegate.swift in Sources */,
 				5ED1C222261CC05C002AB524 /* SceneDelegate.swift in Sources */,
 				5EEE5C6E261CFA68001F2893 /* AlbumDetailViewController.swift in Sources */,
+				5E0FD2FD2624181D0012E2E4 /* FavoritesViewController.swift in Sources */,
 				5EEE5C49261CDA07001F2893 /* NetworkClient.swift in Sources */,
 				5EEE5C4C261CDAB5001F2893 /* MusicStructs.swift in Sources */,
 				5E0FD2F2262412CF0012E2E4 /* WebKitViewController.swift in Sources */,

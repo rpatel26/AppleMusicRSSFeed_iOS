@@ -147,7 +147,16 @@ class TopAlbumViewController: UIViewController {
     }
 }
 
-extension TopAlbumViewController: UITableViewDelegate, UITableViewDataSource {
+extension TopAlbumViewController: UITableViewDelegate, UITableViewDataSource, FavoritedAlbum {
+    func favoritesToggled(forCell cell: UITableViewCell) {
+        guard let indexPath = self.topAlbumTableView.indexPath(for: cell) else { return }
+        let isFavorited = albums[indexPath.row].isFavorited ?? false
+        albums[indexPath.row].isFavorited = !isFavorited
+        cell.accessoryView?.tintColor = isFavorited ? .lightGray : .FAVORITES_COLOR
+        
+        NotificationCenter.default.post(name: isFavorited ? NSNotification.Name.FAVORITES_REMOVED : NSNotification.Name.FAVORITES_ADDED, object: nil, userInfo: ["Album": albums[indexPath.row]])
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return albums.count
     }
@@ -171,6 +180,8 @@ extension TopAlbumViewController: UITableViewDelegate, UITableViewDataSource {
 
             }
         }
+        cell.favoritesDelegate = self
+        cell.accessoryView?.tintColor = (albums[indexPath.row].isFavorited ?? false) ? .FAVORITES_COLOR : .lightGray
         
         return cell
     }

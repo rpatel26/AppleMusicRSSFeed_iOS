@@ -11,6 +11,8 @@ class MusicAlbumTableViewCell: UITableViewCell {
     var albumArt: UIImageView!
     var albumName: UILabel!
     var artistName: UILabel!
+    var starButton: UIButton!
+    var favoritesDelegate: FavoritedAlbum?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,11 +38,22 @@ class MusicAlbumTableViewCell: UITableViewCell {
         contentView.addSubview(albumName)
         contentView.addSubview(artistName)
         
+        // Adding the favroites star button
+        starButton = UIButton(type: .system)
+        starButton.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        starButton.setImage(UIImage(named: "fav_star"), for: .normal)
+        starButton.tintColor = .lightGray
+        starButton.addTarget(self, action: #selector(favoritesButtonClicked), for: .touchUpInside)
+        accessoryView = starButton
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
+    }
+    
+    @objc private func favoritesButtonClicked(button: UIButton){
+        favoritesDelegate?.favoritesToggled(forCell: self)
     }
 
 }

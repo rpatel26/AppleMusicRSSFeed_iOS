@@ -27,4 +27,10 @@ extension URL{
 
 extension NSNotification.Name {
     static let RELOAD_DATA = NSNotification.Name("Data_Ready_For_Reload")
+    static let FAVORITES_ADDED = NSNotification.Name("Album added to favorites")
+    static let FAVORITES_REMOVED = NSNotification.Name("Album removed from favorites")
+}
+
+extension UIColor{
+    static let FAVORITES_COLOR = UIColor(red: 68/255, green: 121/255, blue: 251/255, alpha: 1)
 }
