@@ -35,10 +35,9 @@ class TopAlbumViewController: UIViewController {
 
         networkClient = NetworkClient()
         
+        
         activityIndicator.startAnimating()
         getTopMusicAlbum(withURL: URL.TOP_ALBUM_URL[1])
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(topAlbumListUpdated), name: NSNotification.Name.RELOAD_DATA, object: nil)
     }
     
     private func getTopMusicAlbum(withURL url: URL){
@@ -47,9 +46,15 @@ class TopAlbumViewController: UIViewController {
             switch result {
                 case .success(let musicAlbums):
                     self.albums = musicAlbums
+                    let group = DispatchGroup()
+                    group.enter()
                     DispatchQueue.global().async {
                         self.sortAlbum(by: self.sortingCriteria)
-                        NotificationCenter.default.post(name: NSNotification.Name.RELOAD_DATA, object: nil)
+                        group.leave()
+                    }
+                    
+                    group.notify(queue: .global()) {
+                        self.topAlbumListUpdated()
                     }
                     
                 case .failure(let error):
