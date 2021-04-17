@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Favorites View Controller-->
+        <!--Favorites-->
         <scene sceneID="VQx-eG-5VZ">
             <objects>
                 <viewController id="j0b-qd-0UG" customClass="FavoritesViewController" customModule="MusicApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -41,7 +41,7 @@
                             <constraint firstItem="m0f-u4-oPv" firstAttribute="leading" secondItem="3Uh-Z8-utV" secondAttribute="leading" id="huy-f8-WxC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="22a-3q-Wuc"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="22a-3q-Wuc"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="favoritesAlbumTableView" destination="m0f-u4-oPv" id="hOd-I2-9eA"/>

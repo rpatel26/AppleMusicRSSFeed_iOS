@@ -161,21 +161,13 @@ extension TopAlbumViewController: UITableViewDelegate, UITableViewDataSource, Fa
         
         NotificationCenter.default.post(name: isFavorited ? NSNotification.Name.FAVORITES_REMOVED : NSNotification.Name.FAVORITES_ADDED, object: nil, userInfo: ["Album": albums[indexPath.row]])
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return albums.count
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
-    }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "albumCell", for: indexPath) as! MusicAlbumTableViewCell
-        cell.artistName.text = albums[indexPath.row].artistName
-        cell.albumName.text = albums[indexPath.row].name
+        cell.artistName.text = albums[indexPath.section].artistName
+        cell.albumName.text = albums[indexPath.section].name
 
-        let artworkURL = URL(string: albums[indexPath.row].artworkUrl100 ?? "")!
+        let artworkURL = URL(string: albums[indexPath.section].artworkUrl100 ?? "")!
         networkClient.getAlbumArtwork(fromURL: artworkURL) { (image) in
             if let image = image{
                 cell.albumArt.image = image
@@ -186,7 +178,7 @@ extension TopAlbumViewController: UITableViewDelegate, UITableViewDataSource, Fa
             }
         }
         cell.favoritesDelegate = self
-        cell.accessoryView?.tintColor = (albums[indexPath.row].isFavorited ?? false) ? .FAVORITES_COLOR : .lightGray
+        cell.accessoryView?.tintColor = (albums[indexPath.section].isFavorited ?? false) ? .FAVORITES_COLOR : .lightGray
         
         return cell
     }
@@ -197,5 +189,30 @@ extension TopAlbumViewController: UITableViewDelegate, UITableViewDataSource, Fa
         performSegue(withIdentifier: "albumDetail", sender: nil)
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return albums.count
+    }
+        
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
+    }
+
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 5))
+        view.backgroundColor = .clear
+        return view
+    }
+    
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        // this will turn on `masksToBounds` just before showing the cell
+//        cell.contentView.layer.masksToBounds = true
+//    }
 }

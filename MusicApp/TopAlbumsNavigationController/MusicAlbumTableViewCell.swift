@@ -45,6 +45,17 @@ class MusicAlbumTableViewCell: UITableViewCell {
         starButton.tintColor = .lightGray
         starButton.addTarget(self, action: #selector(favoritesButtonClicked), for: .touchUpInside)
         accessoryView = starButton
+        
+//        // add shadow on cell
+//        backgroundColor = .clear
+//        layer.masksToBounds = false
+//        layer.shadowOpacity = 0.23
+//        layer.shadowRadius = 4
+//        layer.shadowOffset = CGSize(width: 0, height: 0)
+//        layer.shadowColor = UIColor.black.cgColor
+
+//        contentView.backgroundColor = .white
+//        contentView.layer.cornerRadius = 8
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
