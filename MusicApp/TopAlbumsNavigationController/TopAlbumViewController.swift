@@ -21,6 +21,7 @@ class TopAlbumViewController: UIViewController {
     var activityIndicator: UIActivityIndicatorView!
     var networkClient: NetworkClient!
     var albums: [MusicAlbum] = [MusicAlbum]()
+    var oldAlbums: [MusicAlbum] = [MusicAlbum]()
     var selectedAlbum: MusicAlbum?
     
     override func viewDidLoad() {
@@ -45,10 +46,11 @@ class TopAlbumViewController: UIViewController {
         networkClient.getTopAlbum(withURL: url) { (result) in
             switch result {
                 case .success(let musicAlbums):
-                    self.albums = musicAlbums
                     let group = DispatchGroup()
                     group.enter()
                     DispatchQueue.global().async {
+                        self.albums = musicAlbums
+//                        self.compareFavorites(old: self.albums, new: musicAlbums)
                         self.sortAlbum(by: self.sortingCriteria)
                         group.leave()
                     }
@@ -155,11 +157,11 @@ class TopAlbumViewController: UIViewController {
 extension TopAlbumViewController: UITableViewDelegate, UITableViewDataSource, FavoritedAlbum {
     func favoritesToggled(forCell cell: UITableViewCell) {
         guard let indexPath = self.topAlbumTableView.indexPath(for: cell) else { return }
-        let isFavorited = albums[indexPath.row].isFavorited ?? false
-        albums[indexPath.row].isFavorited = !isFavorited
+        let isFavorited = albums[indexPath.section].isFavorited ?? false
+        albums[indexPath.section].isFavorited = !isFavorited
         cell.accessoryView?.tintColor = isFavorited ? .lightGray : .FAVORITES_COLOR
         
-        NotificationCenter.default.post(name: isFavorited ? NSNotification.Name.FAVORITES_REMOVED : NSNotification.Name.FAVORITES_ADDED, object: nil, userInfo: ["Album": albums[indexPath.row]])
+        NotificationCenter.default.post(name: isFavorited ? NSNotification.Name.FAVORITES_REMOVED : NSNotification.Name.FAVORITES_ADDED, object: nil, userInfo: ["Album": albums[indexPath.section]])
     }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -169,12 +171,13 @@ extension TopAlbumViewController: UITableViewDelegate, UITableViewDataSource, Fa
 
         let artworkURL = URL(string: albums[indexPath.section].artworkUrl100 ?? "")!
         networkClient.getAlbumArtwork(fromURL: artworkURL) { (image) in
-            if let image = image{
-                cell.albumArt.image = image
-            }
-            else{
-                cell.albumArt.image = UIImage(named: "MissingArt")
-
+            DispatchQueue.main.async {
+                if let image = image{
+                    cell.albumArt.image = image
+                }
+                else{
+                    cell.albumArt.image = UIImage(named: "MissingArt")
+                }
             }
         }
         cell.favoritesDelegate = self
@@ -184,7 +187,7 @@ extension TopAlbumViewController: UITableViewDelegate, UITableViewDataSource, Fa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedAlbum = albums[indexPath.row]
+        selectedAlbum = albums[indexPath.section]
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "albumDetail", sender: nil)
     }

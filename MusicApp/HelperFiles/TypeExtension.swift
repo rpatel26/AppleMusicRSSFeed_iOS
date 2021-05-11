@@ -9,10 +9,10 @@ import UIKit
 
 extension String{
     static let TOP_ALBUM_URL_STRINGS = [
-        "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/10/explicit.json",
-        "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/25/explicit.json",
-        "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/50/explicit.json",
-        "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/100/explicit.json"
+        "https://rss.itunes.apple.com/api/v1/us/ios-apps/new-apps-we-love/all/10/explicit.json",
+        "https://rss.itunes.apple.com/api/v1/us/ios-apps/new-apps-we-love/all/25/explicit.json",
+        "https://rss.itunes.apple.com/api/v1/us/ios-apps/new-apps-we-love/all/50/explicit.json",
+        "https://rss.itunes.apple.com/api/v1/us/ios-apps/new-apps-we-love/all/100/explicit.json",
     ]
 }
 

@@ -57,13 +57,14 @@ class NetworkClient{
     }
     
     func getAlbumArtwork(fromURL url: URL, onComplete: @escaping (_ image: UIImage?) -> ()){
-        if let data = try? Data(contentsOf: url) {
-            let image = UIImage(data: data)
-            onComplete(image)
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url) {
+                let image = UIImage(data: data)
+                onComplete(image)
+            }
+            else{
+                onComplete(nil)
+            }
         }
-        else{
-            onComplete(nil)
-        }
-        
     }
 }
